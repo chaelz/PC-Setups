@@ -14,10 +14,12 @@
 	NewName - New PC Name
 	DomainName - Domain to join
 	AdminPass - Domain Admin PW
+    ServerAddress - Necessary for CWA installs.
+    ServerPass - Necessary for CWA installs.
 .OUTPUTS
     None
 .NOTES
-    File Name      : Setup-Base.ps1
+    File Name      : Invoke-BaseSetup.ps1
     Author         : Charlie Hall - charlie@chaelz.com
 #>
 
@@ -236,7 +238,7 @@ function Set-LocalAdmin {
 		Begin Function Execution
 	#>
     Write-Host('Setting Local Admin up')
-    Set-LocalUser -Name 'ProSuiteAdmin' -Description 'MainSpring ProSuite local admin account' -Password $SecureLocalPW
+    Set-LocalUser -Name 'SomeAdmin' -Password $SecureLocalPW
 }
 
 function Join-Domain {
